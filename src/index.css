@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+  text-align: left;
+}
+
+#menu {
+  text-align: left;
+}
+
+button{
+  margin: 0px;
+  padding: 0px;
+  margin-right: 10px;
+}
+
+.viewer{
+  left : 0;
+  text-align: left;
+}
