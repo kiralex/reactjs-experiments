@@ -2,10 +2,9 @@ import React from 'react';
 import './App.css';
 import MenuItem from './MenuItem.js';
 import Viewer from './Viewer.js';
-import update from 'react-addons-update';
 import axios from 'axios';
 
-class App extends React.PureComponent {
+class App extends React.Component {
   static ELEM_EMPTY = 0;
   static ELEM_CHARACTERS = 1;
   static ELEM_TIMEBASED = 2;
@@ -13,14 +12,14 @@ class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      element: self.ELEM_EMPTY,
+      element: App.ELEM_EMPTY,
       text: [],
     };
   }
 
   async clickHandler(action) {
     let url = 'http://localhost:3100/';
-    let response = [];
+    const response = [];
 
     switch (action) {
       case App.ELEM_CHARACTERS:
@@ -31,9 +30,7 @@ class App extends React.PureComponent {
         break;
     }
 
-    // Accept: 'application/json',
-    // 'Content-Type': 'application/json',
-    let resp = await axios({
+    const resp = await axios({
       method: 'get',
       url: url,
       responseType: 'application/json',
@@ -52,11 +49,27 @@ class App extends React.PureComponent {
         break;
     }
 
-    //response = JSON.stringify(resp.data);
-    let newState = update(this.state, {
-      elem: { $set: action },
-      text: { $set: response },
-    });
+    let newState = {
+      ...this.state,
+      element: action ,
+      text: response
+    };
+
+    // console.log(`Départ : ${this.state.element}`)
+    //
+    // const a = {
+    //   ...this.state,
+    //   element: action,
+    // };
+    //
+    // const b = {
+    //   element: action,
+    //   ...this.state,
+    // };
+    //
+    // console.log(a.element);
+    // console.log(b.element);
+
     this.setState(newState);
   }
 

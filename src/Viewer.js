@@ -1,12 +1,12 @@
 import React from 'react';
 
-class Viewer extends React.PureComponent {
+class Viewer extends React.Component {
   render() {
-    let array = [];
-    this.props.text.forEach(elem => {
-      array.push(<div className="viewer" key={elem}>{elem}</div>);
-    });
-    return <div>{array}</div>;
+    return (
+      <div>
+        {this.props.text.map(e => <div className="viewer" key={e}>{e}</div>)}
+      </div>
+    );
   }
 }
 
