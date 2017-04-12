@@ -38,3 +38,6 @@ jspm_packages
 
 # dependencies
 /node_modules
+
+# dist
+dist

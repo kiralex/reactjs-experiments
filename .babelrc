@@ -1,0 +1,4 @@
+{
+  "presets": ["es2017", "es2015", "env", "react"],
+  "plugins": ["transform-flow-strip-types", "transform-object-rest-spread", "transform-regenerator"]
+}

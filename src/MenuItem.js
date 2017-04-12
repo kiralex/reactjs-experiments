@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import 'babel-polyfill';  
+import { Button } from 'react-bootstrap';   
 
 class MenuItem extends React.Component{
     render(){
