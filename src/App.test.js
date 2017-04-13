@@ -13,17 +13,22 @@ import nock from 'nock';
 // });
 
 it('test App components', () => {
-  const wrapper = mount(<App />);
+  const wrapper = shallow(<App />);
   expect(wrapper.find(MenuItem).length).toBe(2);
   expect(wrapper.find(Viewer).length).toBe(1);
 
   // wrapper.find(MenuItem).forEach((elem, index) => {
   //   console.log(`Après : ${wrapper.state('element')}`); //   // expect(app.state('element')) // }); // // // wrapper.children().forEach( (elem, index) => { // //   expect(elem.text()).toBe(text[index]); // });
 });
-it('manual of App callback', async function() {
-  let wrapper = mount(<App />);
+
+test('setState after clickHandler', async () => {
+  const wrapper = shallow(<App />);
   console.log(`Avant : ${wrapper.state('element')}`);
-  wrapper.instance().clickHandler(1);
-  wrapper = wrapper.update();
-  console.log(`Avant : ${wrapper.state('element')}`); // state not changed ??
+
+  await wrapper
+    .instance()
+    .clickHandler()
+
+  console.log(`Après : ${wrapper.state('element')}`);
+
 });
