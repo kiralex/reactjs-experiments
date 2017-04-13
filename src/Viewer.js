@@ -1,11 +1,19 @@
 import React from 'react';
+import injectSheet from 'react-jss'
 
-const Viewer = ({ text }) => {
+const styles = {
+  viewer: {
+    left: '0',
+    'text-align': 'left'
+  },
+};
+
+const Viewer = ({classes, text }) => {
   return (
     <div>
-      {text.map(e => <div className="viewer" key={e}>{e}</div>)}
+      {text.map(e => <div className={classes.viewer} key={e}>{e}</div>)}
     </div>
   );
 };
 
-export default Viewer;
+export default injectSheet(styles)(Viewer);
