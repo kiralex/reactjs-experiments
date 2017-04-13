@@ -9,8 +9,6 @@ const ELEM_CHARACTERS = 1;
 const ELEM_TIMEBASED = 2;
 
 class App extends React.Component {
-
-
   constructor(props) {
     super(props);
     this.state = {
@@ -53,25 +51,11 @@ class App extends React.Component {
 
     let newState = {
       ...this.state,
-      element: action ,
-      text: response
-    };
+      element: action,
+      text: response,
+    }; // // const a = { //   ...this.state, //   element: action, // }; // // const b = { //   element: action, //   ...this.state, // }; // // console.log(a.element); // console.log(b.element);
 
     // console.log(`Départ : ${this.state.element}`)
-    //
-    // const a = {
-    //   ...this.state,
-    //   element: action,
-    // };
-    //
-    // const b = {
-    //   element: action,
-    //   ...this.state,
-    // };
-    //
-    // console.log(a.element);
-    // console.log(b.element);
-
     this.setState(newState);
   }
 
@@ -82,10 +66,12 @@ class App extends React.Component {
           <MenuItem
             label="Characters"
             clickHandler={() => this.clickHandler(ELEM_CHARACTERS)}
+            action={ELEM_CHARACTERS}
           />
           <MenuItem
             label="Timebased"
             clickHandler={() => this.clickHandler(ELEM_TIMEBASED)}
+            action={ELEM_TIMEBASED}
           />
         </div>
         <Viewer text={this.state.text} />
@@ -94,5 +80,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;

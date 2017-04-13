@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index_bundle.js'
+    filename: 'index_bundle.js',
   },
   module: {
     rules: [
@@ -22,8 +22,9 @@ module.exports = {
     proxy: {
       '/api': {
         target: 'http://localhost:3000',
-        pathRewrite: {'^/api' : ''}
+        pathRewrite: { '^/api': '' },
       },
     },
-  }
+    port: 3100,
+  },
 };
