@@ -19,7 +19,7 @@ const Viewer = ({classes, text }) => {
 
 
 Viewer.propTypes = {
-  'text': PropTypes.arrayOf(PropTypes.number).isRequired,
+  'text': PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default injectSheet(styles)(Viewer);

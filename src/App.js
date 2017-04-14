@@ -15,6 +15,7 @@ class App extends React.Component {
       element: 0,
       text: [],
     };
+    this.clickHandler = this.clickHandler.bind(this);
   }
 
   async clickHandler(action) {
@@ -64,11 +65,11 @@ class App extends React.Component {
         <div id="menu">
           <MenuItem
             label="Characters"
-            clickHandler={() => this.clickHandler(ELEM_CHARACTERS)}
+            clickHandler={this.clickHandler.bind(null, ELEM_CHARACTERS)}
           />
           <MenuItem
             label="Timebased"
-            clickHandler={() => this.clickHandler(ELEM_TIMEBASED)}
+            clickHandler={this.clickHandler.bind(null, ELEM_TIMEBASED)}
           />
         </div>
         <Viewer text={this.state.text} />
