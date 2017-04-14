@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   async clickHandler(action) {
-    let url = '/api/';
+    let url = location.protocol + '//' + location.host + '/api/';
     const response = [];
 
     switch (action) {
@@ -53,9 +53,8 @@ class App extends React.Component {
       ...this.state,
       element: action,
       text: response,
-    }; // // const a = { //   ...this.state, //   element: action, // }; // // const b = { //   element: action, //   ...this.state, // }; // // console.log(a.element); // console.log(b.element);
+    };
 
-    // console.log(`Départ : ${this.state.element}`)
     this.setState(newState);
   }
 
@@ -66,12 +65,10 @@ class App extends React.Component {
           <MenuItem
             label="Characters"
             clickHandler={() => this.clickHandler(ELEM_CHARACTERS)}
-            action={ELEM_CHARACTERS}
           />
           <MenuItem
             label="Timebased"
             clickHandler={() => this.clickHandler(ELEM_TIMEBASED)}
-            action={ELEM_TIMEBASED}
           />
         </div>
         <Viewer text={this.state.text} />
@@ -80,4 +77,5 @@ class App extends React.Component {
     );
   }
 }
+export {App, ELEM_EMPTY, ELEM_CHARACTERS, ELEM_TIMEBASED};
 export default App;
