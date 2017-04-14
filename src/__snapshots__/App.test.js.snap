@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setState after clickHandler 1`] = `
+<div
+  className="App"
+>
+  <div
+    id="menu"
+  >
+    <MenuItem
+      clickHandler={[Function]}
+      label="Characters"
+    />
+    <MenuItem
+      clickHandler={[Function]}
+      label="Timebased"
+    />
+  </div>
+  <Jss(Viewer)
+    text={Array []}
+  />
+</div>
+`;
+
+exports[`setState after clickHandler 2`] = `
+<div
+  className="App"
+>
+  <div
+    id="menu"
+  >
+    <MenuItem
+      clickHandler={[Function]}
+      label="Characters"
+    />
+    <MenuItem
+      clickHandler={[Function]}
+      label="Timebased"
+    />
+  </div>
+  <Jss(Viewer)
+    text={Array []}
+  />
+</div>
+`;
+
+exports[`test App components 1`] = `
+<div
+  className="App"
+>
+  <div
+    id="menu"
+  >
+    <MenuItem
+      clickHandler={[Function]}
+      label="Characters"
+    />
+    <MenuItem
+      clickHandler={[Function]}
+      label="Timebased"
+    />
+  </div>
+  <Jss(Viewer)
+    text={Array []}
+  />
+</div>
+`;

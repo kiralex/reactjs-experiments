@@ -13,7 +13,9 @@ it('test App components', () => {
   const wrapper = shallow(<App />);
   expect(wrapper.find(MenuItem).length).toBe(2);
   expect(wrapper.find(Viewer).length).toBe(1);
+  expect(wrapper).toMatchSnapshot();
 });
+
 test('setState after clickHandler', async () => {
   const elementsTimebased = [];
   const respCharaters = {
@@ -52,10 +54,12 @@ test('setState after clickHandler', async () => {
     await wrapper.instance().clickHandler(ELEM_CHARACTERS);
     expect(wrapper.state('element')).toBe(ELEM_CHARACTERS);
     expect(wrapper.state('text')).toEqual(respCharaters.characters);
+    expect(wrapper).toMatchSnapshot();
 
     await wrapper.instance().clickHandler(ELEM_TIMEBASED);
     expect(wrapper.state('element')).toBe(ELEM_TIMEBASED);
     expect(wrapper.state('text')).toEqual(elementsTimebased);
+    expect(wrapper).toMatchSnapshot();
   } catch (err) {
     console.log(err);
   }

@@ -13,4 +13,6 @@ it('tests MenuItem Component', () => {
   expect(
     wrapper.equals(<Button bsStyle="primary" onClick={handler}>{text}</Button>),
   ).toBe(true);
+
+  expect(wrapper).toMatchSnapshot();
 });

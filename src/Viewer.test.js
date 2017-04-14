@@ -10,4 +10,5 @@ it('tests Viewer Component', () => {
   wrapper.children().forEach((elem, index) => {
     expect(elem.text()).toBe(text[index]);
   });
+  expect(wrapper).toMatchSnapshot();
 });

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests MenuItem Component 1`] = `
+<Button
+  active={false}
+  block={false}
+  bsClass="btn"
+  bsStyle="primary"
+  disabled={false}
+  onClick={[Function]}
+>
+  my super test
+</Button>
+`;
