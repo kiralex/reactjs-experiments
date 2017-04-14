@@ -1,5 +1,6 @@
 import React from 'react';
-import injectSheet from 'react-jss'
+import injectSheet from 'react-jss';
+import PropTypes from 'prop-types';
 
 const styles = {
   viewer: {
@@ -15,5 +16,10 @@ const Viewer = ({classes, text }) => {
     </div>
   );
 };
+
+
+Viewer.propTypes = {
+  'text': PropTypes.arrayOf(PropTypes.number).isRequired,
+}
 
 export default injectSheet(styles)(Viewer);
